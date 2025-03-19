@@ -1,10 +1,7 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import PostCard from "./components/postcard";
+import  "./App.css";
 
 function App() {
-
   const initialPosts = [
     {
       id: 1,
@@ -30,10 +27,12 @@ function App() {
   ];
 
   return (
-    <>
-      
-    </>
-  )
+    <div style={{ maxWidth: "400px", margin: "auto", padding: "20px" }}>
+      {initialPosts.map(post => (
+        <PostCard key={post.id} {...post} />
+      ))}
+    </div>
+  );
 }
 
-export default App
+export default App;
